@@ -7,7 +7,7 @@ terraform {
     }
   }
 
- required_version = ">= 1.9.0"
+  required_version = ">= 1.9.0"
 }
 
 # Configure the Microsoft Azure Provider
@@ -17,4 +17,4 @@ provider "azurerm" {
 
 data "azurerm_subscription" "current" {}
 
-data "azurerm_client_config"  "current" {}
+data "azurerm_client_config" "current" {}

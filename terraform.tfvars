@@ -1,4 +1,4 @@
-resource_group_name ="rg-governance-demo"
+resource_group_name = "rg-governance-demo"
 
 location = "Canada Central"
 
