@@ -1,25 +1,25 @@
 variable "resource_group_name" {
   type = string
   description = "value of the resource group name"
-  default = "rg-governance"
+  default = "rg-governance-demo"
 }
 
 variable "location" {
   type = string
   description = "value of location"
-  default = "canadacentral"
+  default = "Canada Central"
 }
 
 variable "allowed_locations" {
   type = list(string)
   description = "List of allowed locations"
-  default = ["canadacentral", "eastus", "westus"]
+  default = ["Canada Central", "Canada East"]
 }
 
 variable "allowed_environments" {
   type = list(string)
   description = "List of allowed environments"
-  default = ["dev", "test", "prod"]
+  default = ["dev", "staging", "prod"]
   
 }
 
