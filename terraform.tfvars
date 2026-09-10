@@ -13,4 +13,4 @@ allowed_environments = [
   "prod"
 ]
 
-policy_effect = "Audit"
+policy_effect = "Deny"
