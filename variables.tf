@@ -23,6 +23,12 @@ variable "allowed_environments" {
 
 }
 
+variable "allowed_types" {
+  type = list(string)
+  description = "List of allowed resouces"
+  default = [ "Microsoft.Storage/storageAccounts", "Microsoft.Compute/virtualMachines" ]
+}
+
 variable "policy_effect" {
   type        = string
   description = "Policy effect to be applied"

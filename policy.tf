@@ -9,6 +9,10 @@ resource "azurerm_policy_definition" "governance" {
       allOf = [
 
         # Apply only to Storage Accounts or VMs
+        {
+          field = "type"
+          in = "[parameter('allowed_types')]"
+        },
 
         # Detect at least one violation
         {
@@ -58,6 +62,14 @@ resource "azurerm_policy_definition" "governance" {
       }
     },
 
+    allowed_types = {
+      type = "Array",
+      metadata = {
+        description  = "Azure types approved by TechCorp",
+        displayName = "Allowed Types"
+      }
+    },
+
     allowed_environments = {
       type = "Array",
       metadata = {
@@ -98,6 +110,10 @@ resource "azurerm_resource_group_policy_assignment" "governance" {
 
     effect = {
       value = var.policy_effect
+    },
+
+    allowed_types = {
+      value = var.allowed_types
     }
 
   })
