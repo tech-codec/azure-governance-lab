@@ -11,7 +11,7 @@ resource "azurerm_policy_definition" "governance" {
         # Apply only to Storage Accounts or VMs
         {
           field = "type"
-          in = "[parameter('allowed_types')]"
+          in = "[parameters('allowed_types')]"
         },
 
         # Detect at least one violation
@@ -67,7 +67,8 @@ resource "azurerm_policy_definition" "governance" {
       metadata = {
         description  = "Azure types approved by TechCorp",
         displayName = "Allowed Types"
-      }
+      },
+      defaultValue = var.allowed_types
     },
 
     allowed_environments = {
